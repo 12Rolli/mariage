@@ -1,0 +1,79 @@
+@use '../util' as *;
+
+.histoire{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--gray);
+
+    &_book__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65%;
+        min-width: rem(250);
+        max-width: rem(400);
+        height: rem(330);
+        position: relative;
+        perspective: rem(1000);
+        transition: 1s;
+
+        .book{
+            position: absolute;
+            width: 65%;
+            height: 100%;
+            transition: 1s;
+            transform-style: preserve-3d;
+            transform-origin: left;
+            .face-front, .face-back{
+                width: 100%;
+                height: 100%;
+                background-color: var(--white);
+                padding: rem(15);
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .face-front{
+                box-shadow: inset rem(3) 0 rem(20) rem(-7) var(--black);
+                border-top-right-radius: rem(3);
+                border-bottom-right-radius: rem(3);
+            }
+            .face-back{
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-shadow: inset rem(3) 0 rem(20) rem(-7) var(--black);
+                transform: translateZ(-1px) rotateY(180deg);
+                border-top-left-radius: rem(3);
+                border-bottom-left-radius: rem(3);
+                p{
+                    margin-top: rem(10);
+                    font-size: rem(14);
+                    text-align: justify;
+                    @include breakpoint-down(xsmall){
+                        font-size: rem(12);
+                    }
+                }
+            }
+            #portada{
+                background-color: hsl(240, 81%, 69%);
+            }
+            #portada-back{
+                background-color: hsl(240, 81%, 69%);
+            }
+            #portada, #portada-back{
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
+
+.trnsf{
+    transform: translateX(rem(80));
+}
+.trnsf-reset{
+    transform: translateX(rem(0));
+}

@@ -1,0 +1,6 @@
+@use '../util' as *;
+
+.grid_2__cols{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
