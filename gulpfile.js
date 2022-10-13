@@ -85,22 +85,22 @@ task('browserSyncReload', function (cb) {
 task('copy-assets', series('htmlTask', 'scssTask', 'jsTask'));
 //task('copy-assets', series('htmlTask', 'scssTask', 'jsTask', 'assetsTask'));
 
-task(
-    'deploy',
-    series('copy-assets', function () {
-        return src(['dist/**/*']).pipe(
-            dest('/var/www/digital-x-sarl.com/html')
-        );
-    })
-);
+// task(
+//     'deploy',
+//     series('copy-assets', function () {
+//         return src(['dist/**/*']).pipe(
+//             dest('/var/www/digital-x-sarl.com/html')
+//         );
+//     })
+// );
 
 // Watch Task
-function watchTask() {
-    watch(
-        ['app/scss/**/*.scss', 'app/**/*.js', 'images/*'],
-        series(scssTask, jsTask, imgTask, browserSyncReload)
-    );
-}
+// function watchTask() {
+//     watch(
+//         ['app/scss/**/*.scss', 'app/**/*.js', 'images/*'],
+//         series(scssTask, jsTask, imgTask, browserSyncReload)
+//     );
+// }
 task('watchTask', function () {
     watch(
         ['*.html', 'app/pages/**/*.html'],

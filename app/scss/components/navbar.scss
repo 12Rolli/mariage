@@ -2,7 +2,8 @@
 
 .navbar{
     overflow: hidden;
-    z-index: 20;
+    z-index: 1000;
+    position: relative;
     &_menu{
         height: rem(50);
         width: rem(50);
@@ -13,10 +14,14 @@
             position: relative;
             display: block;
             margin-left: rem(52);
-            margin-top: rem(23);
+           // margin-top: rem(23);
             height: rem(50);
             width: rem(50);
             border-radius: rem(50);
+            @include breakpoint-down(extrasmall){
+                margin-left: 1.25rem;
+                width: rem(40);
+            }
 
             .logo{
                 position: absolute;
