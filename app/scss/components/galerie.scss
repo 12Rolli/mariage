@@ -4,41 +4,67 @@
     background-image: url('https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/couplebg.png');
     background-repeat: no-repeat;
     background-position: right;
-    background-size: contain;
     max-width: rem(1440);
     margin: 0 auto;
-    // @include breakpoint-down(xextralarge){
-    //     max-width: rem(2500);
-    // }
+    @include breakpoint-down(medium){
+        background-size: cover;
+    }
+    @include breakpoint-down(small){
+        background-image: none;
+    }
     &__box{
-        display: flex;
-        flex-direction: column;
+        display: grid;
         
 
         &--box1{
             display: grid;
             grid-template-columns: 0.5fr 1fr 1fr;
+            @include breakpoint-down(small){
+                gap: rem(16);
+                    justify-items: center;
+                    grid-template-columns: 1fr;
+            }
+            .box1--grid1{
+                @include breakpoint-down(medium){
+                    display: block;
+                    align-self: center;
+                }
+            }
             .box1--grid2{
                 display: grid;
+                @include breakpoint-down(small){
+                    grid-area: 1;
+                }
                 h1{
                     padding-top: rem(15);
-                    text-align: center;
                     font-family: var(--font-stat);
+                    text-align: center;
                     font-size: rem(64);
+                    
+                    @include breakpoint-down(tablet){
+                        font-size: rem(54);
+                    }
                 }
                 &--img1{
                     display: grid;
                     grid-template-columns: repeat(3,1fr);
                     @include breakpoint-down(medium){
+                        grid-template-columns: repeat(1,1fr);
+                    }
+                    @include breakpoint-down(small){
                         grid-template-columns: repeat(2,1fr);
+                        justify-items: center;
                     }
                 }
                 &--img2{
                     display: grid;
                     grid-template-columns: repeat(3,1fr);
-                    // @include breakpoint-down(tablet){
-                    //     grid-template-columns: repeat(2,1fr);
-                    // }
+                    @include breakpoint-down(tablet){
+                        grid-template-columns: repeat(1,1fr);
+                    }
+                    @include breakpoint-down(small){
+                        justify-items: center;
+                    }
                 }
             }
         }
@@ -47,10 +73,29 @@
             .box2--grid1{
                 display: grid;
                 grid-template-columns: repeat(3,1fr);
+                @include breakpoint-down(tablet){
+                    grid-template-columns: repeat(2,1fr);
+                }
+                @include breakpoint-down(xsmall){
+                    grid-template-columns: repeat(1,1fr);
+                }
+                @include breakpoint-down(small){
+                    justify-items: center;
+                }
             }
             .box2--grid2{
                 display: grid;
                 grid-template-columns: repeat(4,1fr);
+                @include breakpoint-down(tablet){
+                    grid-template-columns: repeat(2,1fr);
+                }
+                @include breakpoint-down(xsmall){
+                    grid-template-columns: repeat(1,1fr);
+                    justify-items: end;
+                }
+                @include breakpoint-down(small){
+                    justify-items: center;
+                }
             }
         }
     }
