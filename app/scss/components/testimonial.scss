@@ -1,0 +1,220 @@
+@use '../util' as *;
+
+.testimonial {
+    padding-top: 3rem;
+    width: 100%;
+
+    &__container {
+        position: relative;
+        width: 100%;
+        padding: rem(40) 0;
+    }
+    &__arrow {
+        display: block;
+        position: absolute;
+        color: var(--black);
+        cursor: pointer;
+        font-size: 2em;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in-out;
+        padding: rem(5);
+        z-index: 22222222;
+
+        &--right {
+            right: rem(10);
+            @include breakpoint-down(extrasmall){
+                right: -1rem;
+            }
+        }
+
+        &--left {
+            left: rem(10);
+            @include breakpoint-down(extrasmall){
+                left:-1rem;
+            }
+        }
+    }
+    &__arrow::before {
+        cursor: pointer;
+    }
+
+    &__arrow:hover {
+        color: var(--pink);
+    }
+    &__dots {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        bottom: rem(60);
+        left: 0;
+        display: block;
+        z-index: 3333;
+        height: rem(12);
+
+        .dot {
+            list-style-type: none;
+            display: inline-block;
+            width: rem(12);
+            height: rem(12);
+            border-radius: 50%;
+            border: 1px solid var(--pink);
+            margin: 0 rem(10);
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .dot.active,
+        .dot:hover {
+            background: var(--pink);
+            border-color: var(--pink);
+        }
+        .dot.active {
+            animation: testim-scale 0.5s ease-in-out forwards;
+        }
+    }
+    &__content {
+        position: relative;
+        overflow: hidden;
+
+        > div{
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0 0 70px 0;
+            opacity: 0;
+
+            .testimage1{
+                background:url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1666002504/mariage/profil/profil-1.png) ;
+            }
+
+            .testimage2{
+                background:url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1666002504/mariage/profil/profil-2.png) ;
+            }
+            .testimage3{
+                background:url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1666002504/mariage/profil/profil-3.png) ;
+            }
+            .testimage4{
+                background:url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1666002504/mariage/profil/profil-4.png) ;
+            }
+            .testimage5{
+                background:url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1666002504/mariage/profil/profil-5.png) ;
+            }
+        }
+
+        div.inactive {
+            opacity: 1;
+        }
+        div.active {
+            position: relative;
+            opacity: 1;
+        }
+
+        div .img  {
+            display: block;
+            width: rem(180);
+            height: rem(180);
+            margin: auto;
+            border-radius: 0.1rem;
+            background-size: cover;
+        }
+
+        div h2 {
+            color: var(--pink);
+            font-size: 1em;
+            margin: rem(15) 0;
+        }
+
+        div p {
+            font-size: 1.15em;
+            color: var(--black);
+            width: 80%;
+            margin: auto;
+
+            
+        }
+
+        div.active .img img {
+            animation: testim-show 0.5s ease-in-out forwards;
+        }
+
+        div.active h2 {
+            animation: testim-content-in 0.4s ease-in-out forwards;
+        }
+
+        div.active p {
+            animation: testim-content-in 0.5s ease-in-out forwards;
+        }
+
+        div.inactive .img img {
+            animation: testim-hide 0.5s ease-in-out forwards;
+        }
+        div.inactive h2 {
+            animation: testim-content-out 0.4s ease-in-out forwards;
+        }
+        div.inactive p {
+            animation: testim-content-out 0.5s ease-in-out forwards;
+        }
+
+        
+@keyframes testim-scale {
+    0% {
+        box-shadow: 0px 0px 0px 0px #eee;
+    }
+    35% {
+        box-shadow: 0px 0px 10px 5px #eee;
+    }
+    70% {
+        box-shadow: 0px 0px 10px 5px #ea830e;
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px #ea830e;
+    }
+}
+
+@keyframes testim-content-in {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes testim-content-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+@keyframes testim-show {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes testim-hide {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+    }
+}
+

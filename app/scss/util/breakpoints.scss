@@ -1,17 +1,25 @@
-// 640px, 1150px, 1400px
+// 425px, 640px,1030px, 1150px, 1400px
 $breakpoints-up: (
+	'small': '26.563em',
 	'medium': '40em',
-	'large': '71.875em',
+	'xmedium': '48.75em',
+	'xxsmall': '50em',
+	'xtablet': '59.375em',
+	'xxlarge': '70em',
 	'xlarge': '87.5em',
+	'extralarge': '160em',
 );
 
-//425px, 639px, 800px, 1149px, 1399px
+//425px,500px, 639px, 800px,950px, 1149px, 1399px
 $breakpoints-down: (
 	'extrasmall': '26.563em',
+	'mobile':'31.25rem',
 	'small': '39.9375em',
-	'xsmall': "50em",
+	'xsmall': '50em',
+	'tablet':'59.375em',
 	'medium': '71.8125em',
 	'large': '87.4375em',
+	'xextralarge': '160em',
 );
 
 @mixin breakpoint($size) {

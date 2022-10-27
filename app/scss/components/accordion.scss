@@ -1,0 +1,57 @@
+@use '../util' as *;
+.sectionfaq {
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    &__description {
+        text-align: center;
+    }
+
+    &__container {
+        display: grid;
+        width: 100%;
+        gap: 2rem;
+    }
+    &__content {
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+        padding: 1.5rem 1rem;
+    }
+    &__question {
+        font-size: 1.3rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+    }
+    &__reponse {
+        padding: 1.5rem 0 0 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .faq__close .sectionfaq__reponse {
+        height: 0;
+        overflow: hidden;
+        display: none;
+    }
+    .faq__close .icon--remove{
+        display: none;
+    }
+
+    .faq__open .sectionfaq__reponse {
+        height: 0;
+        height: max-content;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .faq__open .icon--add{
+        display: none;
+    }
+    .faq__open {
+        border-top: 0.2rem solid #f07667;
+    }
+}
