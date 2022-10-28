@@ -1,102 +1,175 @@
 @use '../util' as *;
 
-.galerie{
-    background-image: url('https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/couplebg.png');
-    background-repeat: no-repeat;
-    background-position: right;
-    max-width: rem(1440);
-    margin: 0 auto;
-    @include breakpoint-down(medium){
-        background-size: cover;
-    }
-    @include breakpoint-down(small){
-        background-image: none;
-    }
-    &__box{
-        display: grid;
-        
 
-        &--box1{
-            display: grid;
-            grid-template-columns: 0.5fr 1fr 1fr;
-            @include breakpoint-down(small){
-                gap: rem(16);
-                    justify-items: center;
-                    grid-template-columns: 1fr;
-            }
-            .box1--grid1{
-                @include breakpoint-down(medium){
-                    display: block;
-                    align-self: center;
-                }
-            }
-            .box1--grid2{
-                display: grid;
+.background {
+    background-image: url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/couplebg.png);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: rem(10);
+    overflow: hidden;
+    #fullImageView{
+        display: none;
+        position: fixed;
+        z-index: 99;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100vh;
+        background-color: var(--darkLight);
+        text-align: center;
+        .fullImage{
+            #fullImage{
+                padding: rem(24);
+                height: 50vh;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 @include breakpoint-down(small){
-                    grid-area: 1;
+                    height: auto;
                 }
-                h1{
-                    padding-top: rem(15);
-                    font-family: var(--font-stat);
-                    text-align: center;
-                    font-size: rem(64);
-                    
-                    @include breakpoint-down(tablet){
-                        font-size: rem(54);
-                    }
+            }
+            #CloseButon{
+                position: absolute;
+                top: 10%;
+                right: rem(12);
+                font-size: 2rem;
+                color: var(--white);
+                cursor: pointer;
+                @include breakpoint-down(small){
+                    top: 23%;
                 }
-                &--img1{
-                    display: grid;
-                    grid-template-columns: repeat(3,1fr);
-                    @include breakpoint-down(medium){
-                        grid-template-columns: repeat(1,1fr);
-                    }
-                    @include breakpoint-down(small){
-                        grid-template-columns: repeat(2,1fr);
-                        justify-items: center;
-                    }
-                }
-                &--img2{
-                    display: grid;
-                    grid-template-columns: repeat(3,1fr);
-                    @include breakpoint-down(tablet){
-                        grid-template-columns: repeat(1,1fr);
-                    }
-                    @include breakpoint-down(small){
-                        justify-items: center;
-                    }
+                @include breakpoint-down(tablet){
+                    right: rem(30);
+                    top: 17%;
                 }
             }
         }
-        &--box2{
-            display: grid;
-            .box2--grid1{
-                display: grid;
-                grid-template-columns: repeat(3,1fr);
-                @include breakpoint-down(tablet){
-                    grid-template-columns: repeat(2,1fr);
-                }
-                @include breakpoint-down(xsmall){
-                    grid-template-columns: repeat(1,1fr);
-                }
-                @include breakpoint-down(small){
-                    justify-items: center;
-                }
-            }
-            .box2--grid2{
-                display: grid;
-                grid-template-columns: repeat(4,1fr);
-                @include breakpoint-down(tablet){
-                    grid-template-columns: repeat(2,1fr);
-                }
-                @include breakpoint-down(xsmall){
-                    grid-template-columns: repeat(1,1fr);
-                    justify-items: end;
-                }
-                @include breakpoint-down(small){
-                    justify-items: center;
-                }
+    }
+}
+
+.text {
+    font-family: var(--font-stat);
+    font-size: rem(64);
+    align-self: center;
+    text-align: center;
+    @include breakpoint-down(small) {
+        font-size: rem(43);
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-gap: 0.2rem;
+    grid-template-rows: repeat(9, 5vw);
+    grid-template-columns: repeat(9, 1fr);
+    @include breakpoint-down(small) {
+        padding-top: 2rem;
+        grid-template-rows: repeat(12, 7.5vw);
+        grid-template-columns: repeat(7, 1fr);
+    }
+    &__item {
+        margin: 0;
+        &--10 {
+            grid-row: 1 / span 1;
+            grid-column: 3 / span 4;
+            @include breakpoint-down(small) {
+                grid-row: 1 / span 1;
+                grid-column: 1 / -1;
             }
         }
+        &--0 {
+            grid-row: 1 / span 6;
+            grid-column: 1 / span 2;
+            width: max-content;
+            @include breakpoint-down(small) {
+                grid-row: 2 / span 8;
+                grid-column: 1 / span 1;
+            }
+        }
+        &--1 {
+            grid-row: 2 / span 3;
+            grid-column: 3 / span 2;
+            width: max-content;
+            @include breakpoint-down(small) {
+                grid-row: 2 / span 3;
+                grid-column: 2 / span 4;
+            }
+        }
+        &--2 {
+            grid-row: 2 / span 3;
+            grid-column: 5 / span 1;
+            width: max-content;
+            @include breakpoint-down(small) {
+                grid-row: 2 / span 3;
+                grid-column: 6 / span 1;
+            }
+        }
+        &--3 {
+            grid-row: 2 / span 3;
+            grid-column: 6 / span 1;
+            width: max-content;
+            @include breakpoint-down(small) {
+                grid-row: 7 / span 4;
+                grid-column: 1 / span 3;
+            }
+        }
+        &--4 {
+            grid-row: 5 / span 2;
+            grid-column: 3 / span 2;
+            @include breakpoint-down(small) {
+                grid-row: 10 / span 3;
+                grid-column: 5 / span 8;
+            }
+        }
+        &--5 {
+            grid-row: 5 / span 2;
+            grid-column: 5 / span 2;
+            width: max-content;
+            @include breakpoint-down(small) {
+                display: none;
+            }
+        }
+        &--6 {
+            grid-row: 7 / span 2;
+            grid-column: 1 / span 4;
+            @include breakpoint-down(small) {
+                grid-row: 5 / span 5;
+                grid-column: 2 / span 6;
+            }
+        }
+        &--7 {
+            grid-row: 7 / span 2;
+            grid-column: 5 / span 2;
+            @include breakpoint-down(small) {
+                grid-row: 8 / span 2;
+                grid-column: 2 / span 3;
+                z-index: 5;
+            }
+        }
+        &--8 {
+            grid-row: 9 / span 3;
+            grid-column: 1 / span 2;
+            @include breakpoint-down(small) {
+                grid-row: 10 / span 4;
+                grid-column: 1 / span 3;
+            }
+        }
+        &--9 {
+            grid-row: 9 / span 3;
+            grid-column: 3 / span 4;
+            @include breakpoint-down(small) {
+                grid-row: 13 / span 1;
+                grid-column: 4 / span 9;
+            }
+        }
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 }

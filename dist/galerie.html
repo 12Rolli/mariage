@@ -15,38 +15,57 @@
 
     <body>
 
-        <section class="galerie" id="galerie">
-            <div class="galerie__box">
-                <div class="galerie__box--box1">
-                    <div class="box1--grid1"><img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid1.png" alt=""></div>
-                    <div class="box1--grid2">
-                        <h1>Nos Meilleurs Moments</h1>
-                        <div class="box1--grid2--img1">
-                            <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773123/mariage/galeries/grid2.png" alt="">
-                            <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773123/mariage/galeries/grid9.png" alt="">
-                            <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773123/mariage/galeries/grid0.png" alt="">
-                        </div>
-                        <div class="box1--grid2--img2">
-                            <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773123/mariage/galeries/grid3.png" alt="">
-                            <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773123/mariage/galeries/grid8.png" alt="">
-                        </div>
-                    </div>
-                    <!-- <div class="box1--grid3"></div> -->
+        <section class="background">
+                <div class="gallery">
+                    <h2 class="gallery__item gallery__item--10 text">Nos Meilleurs moments</h2>
+    
+                    <figure class="gallery__item gallery__item--0">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid1.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--1">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid2.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--2">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid9.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--3">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid0.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--4">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid3.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--5">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid8.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--6">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid4.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--7">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773121/mariage/galeries/grid5.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--8">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid7.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
+                    <figure class="gallery__item gallery__item--9">
+                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid6.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
+                    </figure>
                 </div>
-
-                <div class="galerie__box--box2">
-                    <div class="box2--grid1">
-                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid4.png" alt="">
-                    <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773121/mariage/galeries/grid5.png" alt="">
-                    </div>
-                    <div class="box2--grid2">
-                        <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid7.png" alt="">
-                    <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid6.png" alt="">
+                <div id="fullImageView">
+                    <div class="fullImage">
+                     <img id="fullImage">
+                     <span id="CloseButon" onclick="CloseFullView()">&times;</span>
                     </div>
                 </div>
-            </div>
         </section>
 
+        <script type="text/javascript">
+            function FullView(ImgLink){
+                document.getElementById("fullImage").src = ImgLink;
+                document.getElementById("fullImageView").style.display = "block";
+            }
+            function CloseFullView(){
+                document.getElementById("fullImageView").style.display = "none";
+            }
+        </script>
     </body>
-
 </html>
