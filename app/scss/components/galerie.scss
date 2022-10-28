@@ -34,11 +34,12 @@
             #CloseButon{
                 position: absolute;
                 top: 10%;
-                right: rem(12);
-                font-size: 2rem;
+                right: rem(50);
+                font-size: 3rem;
                 color: var(--white);
                 cursor: pointer;
                 @include breakpoint-down(small){
+                    font-size: 2rem;
                     top: 23%;
                 }
                 @include breakpoint-down(tablet){
@@ -50,7 +51,7 @@
     }
 }
 
-.text {
+.text1 {
     font-family: var(--font-stat);
     font-size: rem(64);
     align-self: center;

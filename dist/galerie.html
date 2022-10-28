@@ -14,10 +14,37 @@
 </head>
 
     <body>
+        <section class="navbar">
+            <div class="navbar_fixe">
+                <div class="navbar_menu">
+                    <a class="navbar_menu__togglebox">
+                        <span class="logo"></span>
+                    </a>
+        
+                    <div class="navbar_menu__profil">
+                        <div class="logo">
+                            <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1665068347/mariage/logo/logo.png" alt="">
+                        </div>
+                        <h3>David & Laurra</h3>
+                    </div>
+        
+                    <ul class="navbar_menu__items">
+                        <li><a href="index.html"><span class="item">Home Page</span></a></li>
+                        <li><a href="index.html"><span>Notre Histoire</span></a></li>
+                        <li><a href="index.html"><span>Programme</span></a></li>
+                        <li><a href="index.html"><span>Ladies & Gentlemen</span></a></li>
+                        <li><a href="index.html"><span>Cadeau et reservation</span></a></li>
+                        <li><a href="galerie.html"><span>Galerie</span></a></li>
+                        <li><a href="tel:+237 680974148"><span>Tel: +237 680974148</span></a></li>
+                    </ul>
+    
+                </div>
+            </div>
+        </section>
 
         <section class="background">
                 <div class="gallery">
-                    <h2 class="gallery__item gallery__item--10 text">Nos Meilleurs moments</h2>
+                    <h2 class="gallery__item gallery__item--10 text1">Nos Meilleurs moments</h2>
     
                     <figure class="gallery__item gallery__item--0">
                         <img src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1666773124/mariage/galeries/grid1.png" alt="first 1" class="gallery__img" onclick="FullView(this.src)"/>
@@ -67,5 +94,9 @@
                 document.getElementById("fullImageView").style.display = "none";
             }
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script defer src="./script.js"></script>
     </body>
 </html>
